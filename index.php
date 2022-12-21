@@ -39,8 +39,38 @@
         ],
 
     ];
+    /*
+    $filteredHotels = [];
+    $hasParking = $_GET["parking"] ?? "";
+    $rating = $_GET["vote"] ?? "";
+
+    $filtered = !empty($hasParking) || !empty($rating);
+
+    if($filtered){
+            /*foreach($hotels as $hotel){
+            if(($hasParking === "true" && $hotel["parking"] == true) || ($hotel["vote" >= $rating])){
+            $filteredHotels[] = $hotel;
+            
+
+            $mustPush = true;
+
+            if($hasParking === "true" && $hotel["parking"] === false){
+                $mustPush = false;
+            }
+            if(!empty($rating) && $hotel["vote"] < $rating){
+                $mustPush = false;
+            }
+
+            if($mustPush){
+                $filteredHotels[] = $hotel;
+            }
+
+        }
+
+    }*/
 
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -49,7 +79,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Php hotel</title>
-    <link rel="stylesheet" href="css/style.css">
+   
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
     integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -60,26 +90,26 @@
         <div>
             <h1>PHP hotels</h1>
         </div>
-        <form action="">
+        <form action="" method="GET" >
             <div class="row justify-content-center align-items-center">
-                <div class="col">
-                    <div class="form-group">
-                        <label for="">Parking</label>
-                        <input type="email" class="form-control" placeholder="" name="parking" >
-                    </div>
-                </div>
-                <div class="col">
+                <div class="col-sm-6">
                     <div class="form-group">
                         <label for="">Vote</label>
                         <input type="password" class="form-control" placeholder="" name="vote">
                     </div>
                 </div>
-                
+                <div class="col">
+                    <div class="form-check ">
+                        <input type="checkbox" class="form-check-input" id="exampleCheck1" name="parking" value="" >
+                        <label class="form-check-label" for="exampleCheck1">Parking</label>
+                    </div>
+                </div>
+                <div class="col">
+                    <button type="reset" class="btn btn-dark">Reset</button>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
             </div>
-            <div class="mt-2">
-                <button type="reset" class="btn btn-dark">Reset</button>
-                <button type="submit" class="btn btn-primary">Submit</button>
-            </div>
+            
         </form>
 
         <table class="table">
